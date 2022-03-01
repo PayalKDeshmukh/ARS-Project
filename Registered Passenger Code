@@ -1,0 +1,109 @@
+package AirlineResevationSystem.Assignment1;
+
+import java.util.Scanner;
+
+public class RegPassenger {
+
+	private String FirstName = null;
+	private String Date = null;
+	private String Address = null;
+	private String LastName = null;
+
+	public static void main(String[] args) {
+	}
+
+	public int getPassenger_id() {
+			return Passenger_id();
+		}
+
+		private int Passenger_id() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		public void setPassenger_id(int Passenger_id) {
+		}
+
+		public String getFirstName(String FirstName) {
+			return FirstName;
+		}
+
+		public void setFirstName(String FirstName) {
+		}
+
+		public String getLastName() {
+			return LastName;
+		}
+
+		public void setLastName(String LastName) {
+			this.LastName = LastName;
+		
+		}
+		public String getAddress() {
+			return Address;
+		}
+
+		public void setAddress(String Address) {
+			this.Address = Address;
+		}
+		public String getDate() {
+			return Date;
+		}
+
+		public void setDate(String Date) {
+			this.Date = Date;
+		}
+
+		public RegPassenger(int Passenger_id, String FirstName, String LastName, String Address, String Date) {
+			super();
+			this.FirstName = FirstName;
+			this.LastName = LastName;
+			this.Address = Address;
+			this.Date = Date;
+		}
+
+		void verifyPassenger() {
+			int Passenger_id = new Scanner(System.in).nextInt();
+			if(Passenger_id() == Passenger_id) {
+				System.out.println(" Passenger Registered ");
+			}
+			else {
+				System.out.println("Passenger not Registered  ");
+
+			}
+			
+			
+		}
+		
+		RegPassenger(){
+			
+		}
+		
+		@Override
+		public String toString() {
+			String Passenger_id = null;
+			return "RegPassenger[Passenger_id=" + Passenger_id + ", FirstName=" + FirstName + ", LastName=" + LastName + ", Address=" + Address +" Date=" + Date + "]";
+		}
+
+		
+		RegPassenger addPassenger() {
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("enter Passenger_id ");
+			sc.nextInt();
+			System.out.println("enter FirstName ");
+	        sc.next();
+			System.out.println("enter LastName ");
+	        sc.next();
+			System.out.println("enter Passport");
+	        sc.next();
+	        System.out.println("enter Address");
+	        return new RegPassenger();
+		}
+
+		public void login(String user, String password) {
+			// TODO Auto-generated method stub
+			
+		}
+
+	}
