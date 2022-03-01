@@ -1,0 +1,125 @@
+package AirlineResevationSystem.Assignment1;
+
+import java.io.FileNotFoundException;
+import com.sun.tools.javac.parser.ReferenceParser.ParseException;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class SearchFlight {
+   
+	ShowFlightDetails list = new ShowFlightDetails();
+	private List<FlightDetails> ShowFlightDetails;
+	
+		//method for comparing data give result
+	
+		public void searchFlight(String flightNo, String departureLocation,String arrivalLocation, 
+				String flightName , String flightTime, String flightClass , String seatAvl , 
+				double fare, double flightDur) throws Exception { 
+			
+			//throw FileNotFoundException 
+			for (FlightDetails f : list) {
+			
+				if (f.getFlightNo().equalsIgnoreCase(flightNo) && f.getDeparturelocation().equalsIgnoreCase(departureLocation) 
+						&& f.getArrivalLocation().equalsIgnoreCase(arrivalLocation) && f.getFlightName().equalsIgnoreCase(flightName)
+						&& f.getFlightTime().equalsIgnoreCase(flightTime) 
+						&&f.getSeatAvl().equalsIgnoreCase("Y") ){
+				
+			
+				String flightDate = null;
+				if (new DateChecker().isValid(flightDate,f.getFlightDate()) &&
+                  (f.getFlightClass().equalsIgnoreCase(flightClass) || f.getFlightClass().equalsIgnoreCase("EB"))) {
+				}
+					{
+					
+					AirlineResevationSystem.Assignment1.FlightDetails d = new FlightDetails(f.getFlightTime(),
+							f.getDeparturelocation(), f.getArrivalLocation(), f.getFlightDate(), f.getFlightClass(),
+							f.getFlightDur(), f.getFare(), f.getSeatAvl(), f.getFlightClass());
+					
+					if(list.get(7).equals("EB")) 
+						
+						//if flight class business class
+					{
+						d.setFare(f.getFare() + (0.4) * f.getFare());
+					}
+					list.add(d);
+					}
+				}
+			}
+	
+		}
+
+	public void sortvalues(int choice) {
+		
+		// for sorting acc to user by fare or both fare & duraion
+		
+		{
+			if (choice == 1) {
+				Collections.sort(ShowFlightDetails, new Comparator<FlightDetails>() {
+					
+					//@override
+					
+					public int compare(FlightDetails o1, FlightDetails o2) {
+						return (int) (o1.getFare() - o2.getFare());
+					}
+				});
+			} else {
+				System.out.println("You have entered Wrong Choice. ");
+				return ;
+			}
+			AirlineResevationSystem.Assignment1.ShowFlightDetails show = null;
+			show.showDetails(list);
+		}
+	}
+
+}
+	
+
+
+ 	Show flight Details :
+
+package AirlineResevationSystem.Assignment1;
+
+import java.util.ArrayList;
+
+//class for printing data for output
+public class ShowFlightDetails {
+ int i ;
+	private static final FlightDetails[] ShowFlightDetails = null;
+
+	public boolean showDetails(ShowFlightDetails flightList) {
+		
+		for (FlightDetails details : ShowFlightDetails) {
+			System.out.println();
+			System.out.println("\t | \t" + details.getFlightNo());
+			System.out.println("\t | \t" + details.getDeparturelocation());
+			System.out.println("\t | \t" + details.getArrivalLocation());
+			System.out.println("\t | \t" + details.getFlightDate());
+			System.out.println("\t | \t" + details.getFlightName());
+			System.out.println("\t | \t" + details.getFlightTime());
+			System.out.println("\t | \t" + details.getFlightDur());
+			System.out.println("\t | \t" + details.getFare());
+			System.out.println("\t | \t" + details.getSeatAvl());
+			System.out.println("\t | \t" + details.getFlightClass());
+
+			
+		}
+		if(((CharSequence) flightList).isEmpty())
+			System.out.println("Flightts are not available right now");
+
+		return false;
+	}
+
+	public void add(FlightDetails d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object get(int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}
+
