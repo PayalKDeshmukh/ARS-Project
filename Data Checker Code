@@ -1,0 +1,40 @@
+package AirlineResevationSystem.Assignment1;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.sun.tools.javac.parser.ReferenceParser.ParseException;
+
+public class DateChecker {
+
+	public boolean isValid(String date, String flightDate) throws ParseException {
+			
+		    //method for checking date is available or not
+				
+				SimpleDateFormat sdfo = new SimpleDateFormat("dd-mm-yyyy");
+				
+				//get the two date to be compared
+				Date d1 = null;
+				try {
+					d1 = sdfo.parse(date);
+				} catch (java.text.ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				Date d2 = null;
+				try {
+					d2 = sdfo.parse(date);
+				} catch (java.text.ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return false;
+				}
+
+				boolean isValid(boolean equalsIgnoreCase) {
+					// TODO Auto-generated method stub
+					return false;
+				}
+             }
+
+
