@@ -1,0 +1,22 @@
+package AirlineResevationSystem.Assignment1;
+
+import java.util.Scanner;
+
+public class AllowLogin {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);	
+		RegPassenger obj = new RegPassenger();
+		
+		//obj Passenger;
+		System.out.println("user id ");
+		String user = sc.next();
+		System.out.println("password ");
+		String password = sc.next();
+		
+		obj.login( user,  password);
+		
+
+		}
+
+	}
