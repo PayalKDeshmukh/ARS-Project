@@ -1,1 +1,82 @@
+package AirlineResevationSystem.Assignment1;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+//Main class
+public class FlightMain{
+
+	public static void main(String[] args) {
+		
+		//object for getting data from searchFlight class
+		
+	 SearchFlight seachflight = new SearchFlight() ;
+		
+		Scanner sc = new Scanner(System.in);
+		// for taking input
+		
+		String flightNo, departureLocation, arrivalLocation, flightDate, 
+		flightName, flightTime, flightClass , seatAvl;
+		double fare = 0;
+		double flightDur = 0;
+		
+		int choice;
+		
+		System.out.println("Enter FlightNo");
+		Scanner scanner = new Scanner(System.in);
+		flightNo = scanner.nextLine();
+		
+		System.out.println("Enter Departurelocation");
+		departureLocation = scanner.nextLine();
+		
+		System.out.println("Enter ArrivalLocation");
+		arrivalLocation = scanner.nextLine();
+		
+		System.out.println("Enter FlightDate");
+		flightDate = scanner.nextLine();
+		
+		System.out.println("Enter FlightName");
+		flightName = scanner.nextLine();
+		
+		System.out.println("Enter FlightTime");
+		flightTime = scanner.nextLine();
+		
+		System.out.println("Enter FlightClass");
+		flightClass = scanner.nextLine();
+		
+		System.out.println("Enter SeatAvl");
+		seatAvl = scanner.nextLine();
+		
+		
+		System.out.print("Enter Output Preference :   1. Fare \t 2. Flight Duration \nEnter Preference Choice Code : " +" ");	
+		
+	   choice = scanner.nextInt();
+	   
+	    //for search nd compare data
+	 
+	    
+	   try {
+		   SearchFlight( flightNo, departureLocation, arrivalLocation, 
+					flightName, flightTime, flightDur, 
+					 fare,  seatAvl, flightClass);
+		   
+		   //costructor call
+	   
+	   }catch(Exception e) {
+		   
+		   e.printStackTrace();
+	   }
+	}
+
+	private static void SearchFlight(String flightNo, String departureLocation, String arrivalLocation,
+			String flightName, String flightTime, double flightDur, double fare, String seatAvl, String flightClass) {
+		// TODO Auto-generated method stub
+		
+	}
+	}
+
+
+	    
 
